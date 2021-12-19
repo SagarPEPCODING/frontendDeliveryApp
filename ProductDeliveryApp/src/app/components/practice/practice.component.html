@@ -1,0 +1,125 @@
+<div class="m-3">
+  <div class="display-7">
+    This is the one way data binding, one way data binding is done by using
+    interpolation of properties fromm ts component :->
+    <strong>{{ title }}</strong>
+  </div>
+  <img src="{{ imgSrc }}" alt="This is my image" class="m-1" />
+  <img [src]="imgSrc" alt="THis is also my img" class="m-1" />
+  <img [attr.src]="imgSrc" alt="THis is also my img" class="m-1" />
+  <!-- there is two types of onw way binding attribute binding and propery binding -->
+  <!-- Attribute Binding -->
+  <!-- In the attribute biding the attribute property has changed with the help of attr object...and this is html atribute binding -->
+  <table border="2">
+    <tr>
+      <td [attr.colspan]="colSpan">first</td>
+      <td>second</td>
+      <td>third</td>
+    </tr>
+    <tr>
+      <td>sagar</td>
+      <td>sagar</td>
+      <td>Sagar</td>
+    </tr>
+  </table>
+  <!-- Property Binding -->
+  <!-- In this type of binding DOM is manipulated... -->
+  <table border="2">
+    <tr>
+      <td [colSpan]="colSpan">first</td>
+      <td>second</td>
+      <td>third</td>
+    </tr>
+    <tr>
+      <td>sagar</td>
+      <td>sagar</td>
+      <td>Sagar</td>
+    </tr>
+  </table>
+
+  <!-- class binding -->
+  <div class="{{ class1 }}">This is class binding</div>
+  <div [class]="class1">This is class binding using property binding</div>
+  <div [attr.class]="class1">This is class binding using attribute binding</div>
+  <div [class.myclass]="classBinding()">
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+    This is class binding using attribute binding of color change.
+  </div>
+  <div>
+      <button (click) = "changeBoolVal()">CLick Me For Change THe Color Of the Text Written Before</button>
+  </div>
+
+  <!-- style binding -->
+  <div
+    [style.color]="'red'"
+    [style.background-color]="'grey'"
+    [style.border]="'2px solid black'"
+    class="m-0"
+  >
+    <p class="m-2">This is style binding</p>
+  </div>
+
+  <!-- sending data from view to component .ts -->
+  <div
+    class="w-100 mt-2 d-flex justify-content-center"
+    [style.background-color]="'red'"
+  >
+    <button (click)="onCLick()" class="m-2">CLick Me</button>
+  </div>
+  <div *ngFor="let val of array">
+    <div class="fs-2 fw-bold">{{ val }}</div>
+  </div>
+
+  <!-- sending data from view to component .ts -->
+  <div class="mt-2">
+    <input
+      type="text"
+      (keyup)="inputGiven($event)"
+      id="input"
+      ng-model="innerHtmlText"
+    />
+    <div class="d-flex">
+        <div class="ml-2">
+            <button (click)="buttonClicked()">Single Click</button>
+          </div>
+      
+          <div class="ml-2">
+            <button (dblclick)="buttonDblClicked()">Double CLick</button>
+          </div>
+
+          <div class="ml-2">
+            <button (mouseup)="buttonMouseUP()">Mouse Up</button>
+          </div>
+
+          <div class="ml-2">
+            <button (mousedown)="buttonMouseDown()">Mouse Up</button>
+          </div>
+    </div>
+
+    <div *ngFor="let val of arrayStr">
+      <div>{{ val }}</div>
+    </div>
+
+    <div class="mt-3">
+        <input type="text" (keyup) = "mouseUpInput($event)">
+        <button (mouseup) = "mouseUpCLicked()">Mouse Up</button>
+        <div *ngFor="let value of arrMouseUpTRing">
+            {{value}}
+        </div>
+    </div>
+  </div>
+</div>
